@@ -30,7 +30,7 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    return (numbers[0] + numbers[1]).toString();
+    return numbers.reduce((a, b) => a + b, 0).toString();
   }
   
 
