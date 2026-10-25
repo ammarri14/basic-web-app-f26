@@ -42,6 +42,15 @@ export default function QueryProcessor(query: string): string {
     if (query.toLowerCase().includes("minus")) {
     return (numbers[0] - numbers[1]).toString();
   }
+
+    if (query.toLowerCase().includes("primes")) {
+    const isPrime = (n: number) => {
+      if (n < 2) return false;
+      for (let i = 2; i * i <= n; i++) if (n % i === 0) return false;
+      return true;
+    };
+    return numbers.filter(isPrime).join(", ");
+  }
   
 
 
