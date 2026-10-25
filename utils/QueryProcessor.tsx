@@ -32,6 +32,16 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     return numbers.reduce((a, b) => a + b, 0).toString();
   }
+
+  if (query.toLowerCase().includes("power")) {
+    let result = BigInt(1);
+    for (let i = 0; i < numbers[1]; i++) result *= BigInt(numbers[0]);
+    return result.toString();
+  }
+
+    if (query.toLowerCase().includes("minus")) {
+    return (numbers[0] - numbers[1]).toString();
+  }
   
 
 
