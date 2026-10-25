@@ -23,6 +23,17 @@ export default function QueryProcessor(query: string): string {
     return "I love 67";
   }
 
+  const numbers = (query.match(/\d+/g) ?? []).map(Number);
+
+  if (query.toLowerCase().includes("largest")) {
+    return Math.max(...numbers).toString();
+  }
+
+  if (query.toLowerCase().includes("plus")) {
+    return (numbers[0] + numbers[1]).toString();
+  }
+  
+
 
   return "";
 }
